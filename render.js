@@ -1,7 +1,8 @@
 const btn = document.getElementById("go");
-const value = document.getElementById("text");
 
 btn.addEventListener("click", () => {
-  const text = value.value;
-  window.electronAPI.setWk(text);
+  const userInput = document.getElementById("userInput").value;
+
+  //we call the function setWk in the preload.js and send the userInput to the main process
+  window.electronAPI.getIP(userInput);
 });
